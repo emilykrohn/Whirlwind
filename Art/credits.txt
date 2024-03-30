@@ -1,0 +1,4 @@
+background: https://cainos.itch.io/pixel-art-platformer-village-props
+wind: https://nyknck.itch.io/wind
+bird: https://ma9ici4n.itch.io/pixel-art-bird-16x16
+frog: https://devhive.itch.io/froggo
