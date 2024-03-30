@@ -1,5 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://kx1qs2c1yr5u"]
+[gd_scene load_steps=3 format=3 uid="uid://kx1qs2c1yr5u"]
 
-[ext_resource type="PackedScene" uid="uid://cu41bgieevoq2" path="res://Scenes/Entity/entity.tscn" id="1_rfsnc"]
+[ext_resource type="PackedScene" uid="uid://cu41bgieevoq2" path="res://Scenes/Entity/entity.tscn" id="1_rdgh6"]
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="2_e3lgs"]
 
-[node name="Player" instance=ExtResource("1_rfsnc")]
+[node name="Player" instance=ExtResource("1_rdgh6")]
+script = ExtResource("2_e3lgs")
