@@ -45,3 +45,9 @@ frame_progress = 0.254398
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, 2)
+
+[node name="Jump" type="Timer" parent="." index="2"]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="Jump" to="." method="_on_jump_timeout"]
