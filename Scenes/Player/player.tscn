@@ -41,7 +41,7 @@ entity_resource = SubResource("Resource_6a3es")
 sprite_frames = SubResource("SpriteFrames_d48ly")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.826565
+frame_progress = 0.254398
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, 2)
