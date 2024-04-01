@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://kx1qs2c1yr5u"]
+[gd_scene load_steps=11 format=3 uid="uid://kx1qs2c1yr5u"]
 
 [ext_resource type="PackedScene" uid="uid://cu41bgieevoq2" path="res://Scenes/Entity/entity.tscn" id="1_rdgh6"]
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="2_e3lgs"]
@@ -33,21 +33,36 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_inj02"]
+size = Vector2(18, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24fq2"]
+size = Vector2(12, 2)
+
 [node name="Player" instance=ExtResource("1_rdgh6")]
+collision_layer = 0
 script = ExtResource("2_e3lgs")
 entity_resource = SubResource("Resource_6a3es")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_d48ly")
-animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.254398
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(0, 2)
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_inj02")
 
 [node name="Jump" type="Timer" parent="." index="2"]
-wait_time = 0.2
+wait_time = 0.4
 one_shot = true
 
+[node name="Area2D" type="Area2D" parent="." index="3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_24fq2")
+
 [connection signal="timeout" from="Jump" to="." method="_on_jump_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
